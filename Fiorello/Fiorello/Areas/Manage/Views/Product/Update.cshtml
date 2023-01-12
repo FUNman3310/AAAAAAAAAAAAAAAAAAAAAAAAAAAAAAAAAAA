@@ -1,0 +1,47 @@
+﻿
+@model ProductCreateViewModel
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update a Product</h1>
+
+<div class="container">
+<form method="post" asp-action="Update" enctype="multipart/form-data">
+  <div class="row">
+      <div class="mb-3 col-md-3">
+        <label asp-for="Name" class="form-label">Name</label>
+        <input  class="form-control" asp-for="Name" placeholder="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+      </div>
+      <div class="mb-3 col-md-3">
+        <label asp-for="Price" class="form-label">Price</label>
+        <input class="form-control" asp-for="Price" placeholder="Price">
+         <span asp-validation-for="Price" class="text-danger"></span>
+      </div>
+
+
+  </div class="row align-items-center">
+
+      <div class="row align-items-center">
+      <div class="mb-3 col-md-2">
+          <label asp-for="CategoryId" class="form-lable">CategoryId</label>
+          <select class="form-select" asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.Categories,"Id","Name"))">
+
+          </select>
+      </div>
+
+      </div>
+
+      <div style="margin-bottom:20px">
+          <label asp-for="ImageFile" class="form-label">ImageFile</label>
+          <input class="form-control" asp-asp-for="ImageFile" placeholder="ImageFile">
+      </div>
+
+      <div style="display:flex; justify-content:center; align-content:center ">
+           <button type="submit" class="btn btn-primary">Update</button>
+      </div>
+</form>
+</div>
+

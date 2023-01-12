@@ -1,0 +1,50 @@
+﻿@model Slider
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create a slider</h1>
+
+<div class="container">
+<form method="post" asp-action="Create">
+  <div class="row">
+      <div class="mb-3 col-md-3">
+        <label asp-for="Title1" class="form-label">Title1</label>
+        <input  class="form-control" asp-for="Title1" placeholder="Title1">
+        <span asp-validation-for="Title1" class="text-danger"></span>
+      </div>
+      <div class="mb-3 col-md-3">
+        <label asp-for="Title2" class="form-label">Title2</label>
+        <input class="form-control" asp-for="Title2" placeholder="Title2">
+         <span asp-validation-for="Title2" class="text-danger"></span>
+      </div>
+      
+
+  </div class="row align-items-center">
+      <div class="mb-3 col-md-4">
+          <label asp-for="Description" class="form-label">Description</label>
+          <textarea style="width:500px; height:100px" class="form-control"  asp-for="Description" placeholder="Description"></textarea>
+          <span asp-validation-for="Description" class="text-danger"></span>
+      </div> 
+      
+      <div style="margin-bottom:20px">
+          <label asp-for="Image1" class="form-lable">Image1</label>
+          <input class="form-control" asp-for="Image1" placeholder="Image1">
+          <span asp-validation-for="Image1" class="text-danger"></span>
+      </div>
+      <div style="margin-bottom:20px">
+          <label asp-for="Image2" class="form-lable">Image2</label>
+          <input class="form-control" asp-for="Image2" placeholder="Image2">
+          <span asp-validation-for="Image2" class="text-danger"></span>
+      </div>
+
+
+      <div style="display:flex; justify-content:center; align-content:center ">
+           <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+      
+      
+</form>
+</div>
+

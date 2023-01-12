@@ -1,0 +1,40 @@
+﻿@model List<Category>
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+
+<div class="container-fluid" style="display:flex; justify-content:space-between; align-items:center">
+    <h1>Categories:</h1>
+    <a asp-action="create" asp-controller="category" class="btn btn-success">Create</a>
+</div> 
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+
+        @foreach (Category category in Model)
+        {
+            count++;
+            <tr>
+              <th scope="row">@count</th>
+              <td>@category.Name</td>
+
+              
+              <td>
+                  <a asp-action="update" asp-controller="category" asp-route-id="@category.Id" class="btn btn-info">Update</a>
+                      <a asp-action="delete" asp-controller="category" asp-route-id="@category.Id" class="btn btn-danger">Delete</a>
+              </td>
+            </tr>
+        }
+
+  </tbody>
+</table> 
+
+

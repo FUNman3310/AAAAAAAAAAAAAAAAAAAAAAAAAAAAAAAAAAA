@@ -1,0 +1,46 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+
+<div class="container-fluid" style="display:flex; justify-content:space-between; align-items:center">
+    <h1>Products:</h1>
+    <a asp-action="create" asp-controller="product" class="btn btn-success">Create</a>
+</div> 
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Price</th>
+      <th scope="col">Image</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+
+        @foreach (Product product in Model)
+        {
+            count++;
+                <tr>
+                  <th scope="row">@count</th>
+                  <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.CategoryId</td>
+                <td>@product.Image</td>
+                  <td>
+                          <img style="width:150px" src="~/Uploads/Products/@product.Image">
+
+                  </td>
+                  <td>
+                      <a asp-action="update" asp-controller="product" asp-route-id="@product.Id" class="btn btn-info">Update</a>
+                          <a asp-action="delete" asp-controller="product" asp-route-id="@product.Id" class="btn btn-danger">Delete</a>
+                  </td>
+                </tr>
+        }
+
+  </tbody>
+</table> 

@@ -1,0 +1,29 @@
+﻿
+@model Category
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update a Category</h1>
+
+<div class="container">
+<form method="post" asp-action="Update">
+  <div class="row">
+      <div class="mb-3 col-md-3">
+        <label asp-for="Name" class="form-label">Name</label>
+        <input  class="form-control" asp-for="Name" placeholder="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+      </div>
+      
+
+  </div class="row align-items-center">
+     
+   <div style="display:flex; justify-content:center; align-content:center ">
+        <button type="submit" class="btn btn-primary">Update</button>
+   </div>
+
+</form>
+</div>
+
+
